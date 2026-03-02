@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\NewsletterSubscriptionResultTransfer;
 
 interface SubscriptionRequestHandlerInterface
 {
-    /**
-     * @param string $email
-     *
-     * @return \Generated\Shared\Transfer\NewsletterSubscriptionResultTransfer|null
-     */
     public function subscribe(string $email): ?NewsletterSubscriptionResultTransfer;
 }

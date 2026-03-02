@@ -50,11 +50,6 @@ class NewsletterSubscriptionForm extends AbstractType
         return 'newsletterSubscriptionWidgetForm';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
@@ -98,25 +93,16 @@ class NewsletterSubscriptionForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\NotBlank
-     */
     protected function createNotBlankConstraint(): NotBlank
     {
         return new NotBlank(['message' => static::VALIDATION_NOT_BLANK_MESSAGE]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\Email
-     */
     protected function createEmailConstraint(): Email
     {
         return new Email(['message' => static::VALIDATION_EMAIL_MESSAGE]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraints\Length
-     */
     protected function createLengthConstraint(): Length
     {
         return new Length(['max' => static::MAX_EMAIL_LENGTH_VALUE]);

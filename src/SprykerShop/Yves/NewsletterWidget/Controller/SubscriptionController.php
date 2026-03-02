@@ -34,11 +34,6 @@ class SubscriptionController extends AbstractController
         return $this->view($viewData, [], '@NewsletterWidget/views/subscription-form/subscription-form.twig');
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     protected function executeSubscribeAction(Request $request): array
     {
         $success = false;

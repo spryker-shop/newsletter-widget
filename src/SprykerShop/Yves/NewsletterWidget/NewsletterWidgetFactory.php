@@ -24,9 +24,6 @@ class NewsletterWidgetFactory extends AbstractFactory
         return $this->getFormFactory()->create(NewsletterSubscriptionForm::class);
     }
 
-    /**
-     * @return \SprykerShop\Yves\NewsletterWidget\Dependency\Client\NewsletterWidgetToNewsletterClientInterface
-     */
     public function getNewsletterClient(): NewsletterWidgetToNewsletterClientInterface
     {
         return $this->getProvidedDependency(NewsletterWidgetDependencyProvider::CLIENT_NEWSLETTER);
@@ -40,9 +37,6 @@ class NewsletterWidgetFactory extends AbstractFactory
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
     }
 
-    /**
-     * @return \SprykerShop\Yves\NewsletterWidget\Handler\SubscriptionRequestHandlerInterface
-     */
     public function createDoubleOptInSubscriptionRequestHandler(): SubscriptionRequestHandlerInterface
     {
         return new DoubleOptInSubscriptionRequestHandler($this->getNewsletterClient());

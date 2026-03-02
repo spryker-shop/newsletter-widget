@@ -19,35 +19,21 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class NewsletterSubscriptionSummaryWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     */
     public function __construct(CustomerTransfer $customerTransfer)
     {
         $this->addParameter('isSubscribed', $this->getIsSubscribed($customerTransfer));
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'NewsletterSubscriptionSummaryWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@NewsletterWidget/views/newsletter-subscription-summary/newsletter-subscription-summary.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return bool
-     */
     protected function getIsSubscribed(CustomerTransfer $customerTransfer): bool
     {
         $subscriptionRequestTransfer = new NewsletterSubscriptionRequestTransfer();

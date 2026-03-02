@@ -22,19 +22,11 @@ class DoubleOptInSubscriptionRequestHandler implements SubscriptionRequestHandle
      */
     protected $newsletterClient;
 
-    /**
-     * @param \SprykerShop\Yves\NewsletterWidget\Dependency\Client\NewsletterWidgetToNewsletterClientInterface $newsletterClient
-     */
     public function __construct(NewsletterWidgetToNewsletterClientInterface $newsletterClient)
     {
         $this->newsletterClient = $newsletterClient;
     }
 
-    /**
-     * @param string $email
-     *
-     * @return \Generated\Shared\Transfer\NewsletterSubscriptionResultTransfer|null
-     */
     public function subscribe(string $email): ?NewsletterSubscriptionResultTransfer
     {
         $customerTransfer = (new CustomerTransfer())
@@ -54,12 +46,6 @@ class DoubleOptInSubscriptionRequestHandler implements SubscriptionRequestHandle
         return $newsletterSubscriptionResultTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     * @param string|null $subscriberKey
-     *
-     * @return \Generated\Shared\Transfer\NewsletterSubscriptionRequestTransfer
-     */
     protected function createNewsletterSubscriptionRequest(
         CustomerTransfer $customerTransfer,
         ?string $subscriberKey = null

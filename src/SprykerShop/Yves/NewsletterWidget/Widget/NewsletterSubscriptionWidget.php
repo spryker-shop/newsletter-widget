@@ -20,25 +20,16 @@ class NewsletterSubscriptionWidget extends AbstractWidget
         $this->addParameter('newsletterSubscriptionForm', $this->getNewsletterSubscriptionForm());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'NewsletterSubscriptionWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@NewsletterWidget/views/subscription-widget-form/subscription-widget-form.twig';
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     protected function getNewsletterSubscriptionForm(): FormView
     {
         $subscriptionForm = $this
