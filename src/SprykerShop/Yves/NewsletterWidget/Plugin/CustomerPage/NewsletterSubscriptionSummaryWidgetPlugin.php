@@ -19,6 +19,11 @@ use SprykerShop\Yves\NewsletterWidget\Widget\NewsletterSubscriptionSummaryWidget
  */
 class NewsletterSubscriptionSummaryWidgetPlugin extends AbstractWidgetPlugin implements NewsletterSubscriptionSummaryWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(CustomerTransfer $customerTransfer): void
     {
         $widget = new NewsletterSubscriptionSummaryWidget($customerTransfer);
@@ -26,11 +31,21 @@ class NewsletterSubscriptionSummaryWidgetPlugin extends AbstractWidgetPlugin imp
         $this->parameters = $widget->getParameters();
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getTemplate(): string
     {
         return NewsletterSubscriptionSummaryWidget::getTemplate();
